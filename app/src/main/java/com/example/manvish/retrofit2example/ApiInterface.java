@@ -29,6 +29,15 @@ public interface ApiInterface {
     Call<List<UserListResponse>> getUsersList();
 
 
+    @FormUrlEncoded
+    @POST("/InputDoa.doa")
+    Call<User> postjson(@Field("employeeId") String employeeId,
+                        @Field("empDepotDame") String empDepotDame,
+                        @Field("empDepartmentName") String empDepartmentName,
+                        @Field("punchDateTime") String punchDateTime,
+                        @Field("deviceId") String deviceId,
+                        @Field("devDepotName") String devDepotName);
+
 
 // UserListResponse is POJO class to get the data from API,
 // we use List<UserListResponse> in callback because the data
